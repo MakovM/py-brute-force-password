@@ -34,7 +34,6 @@ def get_password(from_: int, to_: int) -> None:
 def brute_force_password() -> None:
     futures = []
     cpu = multiprocessing.cpu_count()
-
     with ProcessPoolExecutor(cpu) as worker:
         for i in range(cpu):
             futures.append(
@@ -50,5 +49,4 @@ if __name__ == "__main__":
     start_time = time.perf_counter()
     brute_force_password()
     end_time = time.perf_counter()
-
     print("Elapsed:", end_time - start_time)
